@@ -1,0 +1,52 @@
+
+.grass
+	position: relative
+	z-index: 10000
+	animation: wind-grass cubic-bezier(0.86, 0.68, 0.34, 0.91) 2s infinite alternate
+
+.grass1
+	@extend .grass
+	top: 345px
+	left: 12px
+	animation-duration: 2.3
+
+	.part1
+		position: absolute
+		border-left: 5px solid transparent
+		border-right: 5px solid transparent
+		border-bottom: 20px solid $grass-color
+
+	.part2
+		position: absolute
+		@include set-part(2px, 13px, 19px, 4px)
+		background-color: $grass-color
+
+.grass2
+	@extend .grass
+	top: 338px
+	left: 24px
+	animation-delay: .5s
+
+	.part1
+		position: absolute
+		border-left: 7px solid transparent
+		border-right: 7px solid transparent
+		border-bottom: 16px solid $grass-color
+
+	.part2
+		position: absolute
+		border-left: 7px solid transparent
+		border-right: 7px solid transparent
+		border-bottom: 16px solid $grass-color
+		top: 8px
+
+	.part3
+		position: absolute
+		@include set-part(2px, 13px, 19px, 4px)
+		background-color: $grass-color
+		top: 20px
+		left: 6px
+
+
+
+

@@ -1,0 +1,22 @@
+
+
+.tree
+	position: relative
+
+	& > .shape
+		position: absolute
+		border-left: 40px solid transparent
+		border-right: 40px solid transparent
+		border-bottom: 180px solid $tree-color
+
+	&.type1 > .shape
+		border-bottom-color: $grassy-mountain1-color
+
+	&.type2 > .shape
+		border-bottom-color: $grassy-mountain2-color
+
+	&.type3 > .shape
+		border-bottom-color: #3b313e
+
+	&.type4 > .shape
+		border-bottom-color: #302838

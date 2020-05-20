@@ -1,0 +1,110 @@
+
+.mountains
+	position: relative
+	z-index: 10
+	top: 267px
+
+	.m-parts
+		position: absolute
+		@include gradient($mountains-color, lighten($mountains-color, 10))
+
+	.part1
+		position: absolute
+		@include set-part(186px, null, 104px, 158px)
+		transform: rotate(165deg)
+
+		.concave
+			position: relative
+			overflow: hidden
+			padding: 20px 0
+
+			&:before
+				position: absolute
+				content: ""
+				height: 178px
+				box-shadow: 0 0 0 20px #614968
+				border-radius: 100%
+				right: -20%
+				left: -20%
+
+	.part2
+		@extend .m-parts
+		@include set-part(131px, 206px, 42px, 286px, 15% 0 0 0)
+		transform: rotate(55deg)
+
+	.part3
+		@extend .m-parts
+		@include set-part(168px, 308px, 10px, 374px, 15% 0 0 0)
+		transform: rotate(55deg)
+
+
+.grassy-mountains
+	position: relative
+	z-index: 10000
+
+	& > .shape
+		position: absolute
+	
+	.tree
+		transform: scale(.9)
+
+.grassy-mountain1
+	@extend .grassy-mountains
+	top: 320px
+
+	/*& > .part1
+		@include set-part(437px, 184px, null, null, 0 100% 0 0)
+		transform: rotate(5deg)
+		background-color: $grassy-mountain1-color*/
+
+	.gm-parts
+		position: absolute
+		background-color: $grassy-mountain1-color
+
+	.part1
+		position: absolute
+		@include set-part(360px, null, 153px, 113px)
+		transform: rotate(230deg)
+
+		.concave
+			position: relative
+			overflow: hidden
+			padding: 20px 0
+
+			&:before
+				position: absolute
+				content: ""
+				height: 130px
+				box-shadow: 0 0 0 20px $grassy-mountain1-color
+				border-radius: 100%
+				right: -20%
+				left: -20%
+
+	.part2
+		@extend .gm-parts
+		@include set-part(316px, 275px, 9px, -135px, 100% 0 0)
+		transform: rotate(5deg)
+
+	.part3
+		@extend .gm-parts
+		@include set-part(178px, 302px, 73px, 127px)
+		transform: rotate(-41deg)
+		
+
+.grassy-mountain2
+	@extend .grassy-mountains
+	top: 444px
+	left: 147px
+
+	& > .shape
+		@include set-part(558px, 237px, null, null, 100% 0 0 0)
+		transform: rotate(-5deg)
+		background-color: $grassy-mountain2-color
+
+	.tree1
+		top: -112px
+		left: 272px
+
+	.tree2
+		top: -141px
+		left: 351px

@@ -1,0 +1,64 @@
+// Landscape Collection | MIT License
+// Copyright (C) 2020 Guilherme Oliveira
+
+@mixin set-part($width, $height, $top: null, $left: null, $radius: null)
+	width: $width
+	height: $height
+	top: $top
+	left: $left
+	border-radius: $radius
+
+@mixin transform($transforms)
+	-webkit-transform: $transforms
+	-moz-transform: $transforms
+	-ms-transform: $transforms
+	transform: $transforms
+
+@mixin border-radius($radius)
+	-webkit-border-radius: $radius
+	-moz-border-radius: $radius
+	border-radius: $radius
+
+@mixin no-select
+	-webkit-touch-callout: none
+	-webkit-user-select: none
+	-khtml-user-select: none
+	-moz-user-select: none 
+	-ms-user-select: none
+	user-select: none
+
+@mixin calc($property, $expression)
+	#{$property}: -moz-calc(#{$expression})
+	#{$property}: -webkit-calc(#{$expression})
+	#{$property}: calc(#{$expression})
+
+@mixin box-shadow($top, $left, $blur, $radius, $color, $inset: false)
+	@if $inset
+		-webkit-box-shadow: inset $top $left $blur $radius $color
+		-moz-box-shadow: inset $top $left $blur $radius $color
+		box-shadow: inset $top $left $blur $radius $color
+	@else
+		-webkit-box-shadow: $top $left $blur $radius $color
+		-moz-box-shadow: $top $left $blur $radius $color
+		box-shadow: $top $left $blur $radius $color
+
+@mixin gradient($from-color, $to-color)
+	background-color: mix($from-color, $to-color)
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from-color), to($to-color))
+	background-image: -webkit-linear-gradient(top, $from-color, $to-color) 
+	background-image: -moz-linear-gradient(top, $from-color, $to-color)
+	background-image: -ms-linear-gradient(top, $from-color, $to-color)
+	background-image: -o-linear-gradient(top, $from-color, $to-color)
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='$from-color', EndColorStr='$to-color')"
+
+@mixin blur($radius)
+	-webkit-filter: blur($radius)
+	-moz-filter: blur($radius)
+	-o-filter: blur($radius)
+	-ms-filter: blur($radius)
+	filter: blur($radius)
+
+@mixin opacity($opacity)
+	filter: alpha(opacity=$opacity*100)
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=#{$opacity*100})
+	opacity: $opacity

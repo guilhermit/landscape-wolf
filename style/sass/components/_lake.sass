@@ -1,0 +1,68 @@
+
+.lake
+	position: relative
+	z-index: 1000
+	top: 455px
+	left: 256px
+
+	& > .shape
+		position: absolute
+		@include set-part(213px, 70px)
+		@include gradient(lighten($lake-color, 10), $lake-color)
+		
+
+	.l-parts
+		position: absolute
+		background-color: lighten($lake-color, 25)
+		height: 2px
+		animation: lake-waves ease 2s infinite alternate
+
+	.part1
+		@extend .l-parts
+		@include set-part(50px, null, null)
+		animation-delay: .1
+
+	.part2
+		@extend .l-parts
+		@include set-part(55px, null, 2px)
+		animation-delay: 1.4s
+
+	.part3
+		@extend .l-parts
+		@include set-part(65px, null, 5px)
+		animation-delay: .6s
+
+	.part4
+		@extend .l-parts
+		@include set-part(70px, null, 9px)
+		animation-delay: .2s
+
+	.part5
+		@extend .l-parts
+		@include set-part(73px, null, 11px)
+		animation-delay: .3s
+
+	.part6
+		@extend .l-parts
+		@include set-part(73px, null, 15px)
+		animation-delay: .2s
+
+	.part7
+		@extend .l-parts
+		@include set-part(65px, null, 19px)
+		animation-delay: .28s
+
+	.part8
+		@extend .l-parts
+		@include set-part(55px, null, 22px)
+		animation-delay: .9s
+
+	.part9
+		@extend .l-parts
+		@include set-part(50px, null, 25px)
+		animation-delay: 1.2s
+
+	.part10
+		@extend .l-parts
+		@include set-part(39px, null, 27px)
+		animation-delay: .5s

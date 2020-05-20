@@ -1,0 +1,160 @@
+
+.wolf
+	position: relative
+	z-index: 100000
+	top: 288px
+	left: 128px
+	display: block
+	transform: scaleY(1.1)
+
+	.w-parts
+		position: absolute
+		background-color: $wolf-color
+
+	.body
+		position: relative
+
+		.part1
+			@extend .w-parts
+			@include set-part(25px, 11px, 26px, 21px, 50% 0 0 0)
+
+		.part2
+			@extend .w-parts
+			@include set-part(13px, 10px, 27px, 43px)
+
+		.part3
+			@extend .w-parts
+			@include set-part(20px, 9px, 30px, 27px)
+			transform: skewY(6deg)
+
+
+	.head
+		position: relative
+		@include set-part(20px, 12px, 25px, 45px)
+		animation: wolf-howl ease 8s infinite alternate
+
+		.part1
+			position: absolute
+			width: 6px
+			left: 0px
+			top: -4px
+			border-left: 5px solid transparent
+			border-right: 4px solid transparent
+			border-bottom: 16px solid $wolf-color
+			transform: rotate(60deg)
+
+		.part2
+			@extend .w-parts
+			@include set-part(10px, 2px, 2px, 10px)
+			transform: skewX(-20deg)
+
+		.part3
+			@extend .w-parts
+			@include set-part(10px, 5px, -2px, 11px, 0 20% 0 0)
+			transform: rotate(15deg)
+
+		.part4
+			@extend .w-parts
+			@include set-part(9px, 4px, -5px, 2px, 0 60% 0 100%)
+			transform: rotate(20deg)
+
+		.part5
+			@extend .w-parts
+			@include set-part(11px, 6px, -5px, 3px, 0 60% 0 0)
+			transform: skewX(-40deg)
+
+	.tail
+		position: relative
+
+		.part1
+			position: absolute
+			left: .5px
+			top: 39.6px
+			border-left: 5px solid transparent
+			border-right: 4px solid transparent
+			border-bottom: 8px solid $wolf-color
+			transform: rotate(230deg)
+
+		.part2
+			position: absolute
+			left: 11px
+			top: 25px
+			border-left: 5px solid transparent
+			border-right: 4px solid transparent
+			border-bottom: 20px solid $wolf-color
+			transform: rotate(50deg)
+
+		
+	.leg1
+		position: relative
+		top: 36px
+		left: 15px
+
+		.part1
+			position: absolute
+			@include set-part(6px, null, -1px, 5px)
+			border-top: 8px solid $wolf-color
+			border-right: 5px solid transparent
+			transform: skewX(-20deg)
+
+		.part2
+			position: absolute
+			@include set-part(2px, null, 5px, 2px)
+			border-top: 7px solid $wolf-color
+			border-right: 3px solid transparent
+			transform: rotate(45deg)
+
+		.part3
+			position: absolute
+			@include set-part(1.5px, null, 8.7px, 1px)
+			border-top: 6.5px solid $wolf-color
+			border-right: 4px solid transparent
+
+	.leg2
+		position: relative
+		top: 36px
+		left: 25px
+
+		.part1
+			position: absolute
+			@include set-part(4px, null, -1px, 5px)
+			border-top: 9px solid $wolf-color
+			border-right: 5px solid transparent
+			transform: skewX(-20deg)
+
+		.part2
+			position: absolute
+			@include set-part(2px, null, 8px, 4px)
+			border-top: 7px solid $wolf-color
+			border-right: 2px solid transparent
+			transform: rotate(-15deg)
+
+	.leg3
+		position: relative
+		top: 36px
+		left: 47px
+
+		.part1
+			position: absolute
+			border-left: 5px solid transparent
+			border-right: 2px solid transparent
+			border-bottom: 20px solid $wolf-color
+			transform: rotate(172deg)
+
+	.leg4
+		position: relative
+		top: 36px
+		left: 53px
+
+		.part1
+			position: absolute
+			border-left: 5px solid transparent
+			border-right: 2px solid transparent
+			border-bottom: 21px solid $wolf-color
+			transform: rotate(160deg)
+
+		.part2
+			position: absolute
+			@include set-part(5px, 2.5px, 13px, 3px)
+			background-color: $wolf-color
+			transform: rotate(10deg) skewX(30deg)

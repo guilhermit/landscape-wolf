@@ -1,0 +1,13 @@
+
+
+.moon
+	position: relative
+	z-index: 1
+	top: 108px
+	left: 114px
+	@include blur(1px)
+
+	.shape
+		position: absolute
+		@include set-part($moon-size, $moon-size, null, null, 50%)
+		background-color: $moon-color
